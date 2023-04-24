@@ -1,0 +1,22 @@
+.imageContainer {
+    height: 30rem;
+    width: 20rem;
+    border-radius: .75rem;
+    overflow: hidden;
+
+    @media (max-width: 500px) {
+        margin-inline: auto;
+        width: 80vw;
+    }
+
+    @media (max-width: 425px) {
+        width: 90vw;
+    }
+
+}
+
+.mainImage {
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+}

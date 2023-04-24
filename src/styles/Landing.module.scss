@@ -1,0 +1,66 @@
+@use "./variables/variables.scss";
+
+.landingSection {
+    height: 100vh;
+    padding-block: 5rem;
+
+    @media (max-width: variables.$extra-large-mobile) {
+        flex-direction: column;
+        padding-block: 0;
+    }
+    
+    .landingContainer {
+        display: flex;
+        justify-content: center;
+        max-width: 50rem;
+        margin-inline: auto;
+        position: relative;
+
+        @media (max-width: 500px) {
+            flex-direction: column;
+        }
+
+        .imageComponentContainer {
+            order: 4;
+        }
+
+        .headingContainer {
+            @media (max-width: variables.$extra-large-mobile) {
+                margin: 0 0;
+                margin-inline: auto;
+                width: 80vw;
+            }
+
+            @media (max-width: variables.$large-mobile) {
+                width: 90vw;
+            }
+
+            .title {
+                color: darkslategray;
+            }
+            
+            .subheading {
+                color: darkslategray;
+            }
+        } 
+
+        .textContainer {
+            margin-left: 2rem;
+        
+            @media (max-width: variables.$extra-large-mobile) {
+                margin: 0 0;
+                width: 80vw;
+                margin-inline: auto;
+                order: 3;
+            }
+
+            @media (max-width: variables.$large-mobile) {
+                width: 90vw;
+            }
+        }
+    }
+}
+
+.text {
+
+}

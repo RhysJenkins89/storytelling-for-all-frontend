@@ -1,0 +1,41 @@
+.postsSection {
+    height: fit-content;
+    background-color: lightslategrey;
+
+
+    .mainContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        place-items: center;
+    }
+
+    .cardContainer {
+        background-color: whitesmoke;
+        height: 30rem;
+        width: 20rem;
+        overflow: hidden;
+        padding: 1rem;
+        border-radius: .5rem;
+
+        .textContainer {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .header {
+                margin: 0 0;
+            }
+
+            .date {
+                font-size: .8rem;
+                margin: .5rem 0 0 0;
+            }
+    
+            .link {
+                margin-top: auto;
+            }
+        }
+    }
+}
+

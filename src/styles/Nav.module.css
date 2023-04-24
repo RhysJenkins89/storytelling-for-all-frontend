@@ -1,0 +1,137 @@
+.mainNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7rem;
+    background-color: whitesmoke;
+    padding-inline: 2rem;
+}
+
+@media (max-width: 500px) {
+    .mainNav {
+        padding-inline: 1rem;
+    }
+}
+
+.logoContainer h1 {
+    margin-block: 0;
+    cursor: pointer;
+}
+
+.itemsContainer {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    transition: all .75s ease;
+}
+
+.itemsContainer p {
+    margin-block: 0;
+    cursor: pointer;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    a {
+        color: whitesmoke;
+    }
+}
+
+@media (min-width: 801px) {
+    .itemsContainer p:not(:last-child) {
+        margin-right: 2rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .itemsContainer {
+        display: none;
+    } 
+}
+
+.itemsContainer.isOpen {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    opacity: 1;
+    visibility: visible;
+}
+
+.itemsContainer.isOpen p {
+    color: whitesmoke;
+    font-size: 2rem;
+    z-index: 20;
+    margin-block: 1rem;
+}
+
+
+.hamburger {
+    display: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    cursor: pointer;
+    z-index: 20;
+}
+
+@media (max-width: 800px) {
+    .hamburger {
+        display: grid;
+        place-items: center;
+    }
+}
+
+.hamburger span {
+    height: .15rem;
+    width: 2.2rem;
+    background-color: black;
+    transition: all .75s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+.hamburger span:nth-child(1).isOpen {
+    transform: translateY(.8rem) rotate(-45deg);
+    background-color: whitesmoke;
+}
+
+.hamburger span:nth-child(2).isOpen {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.hamburger span:nth-child(3).isOpen {
+    transform: translateY(-.8rem) rotate(45deg);
+    background-color: whitesmoke;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .75s ease;
+}
+
+.overlay.isOpen {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 15;
+}
