@@ -23,5 +23,3 @@ export default App;
 // Darken main image/opacity?
 // Add text onto the main image
 // Build the books page -- link to seller
-// This is a test commit
-// Another test
