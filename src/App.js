@@ -17,9 +17,3 @@ function App() {
 }
 
 export default App;
-
-// *** To do *** 
-// Mobile menu text fade-in 
-// Darken main image/opacity?
-// Add text onto the main image
-// Build the books page -- link to seller
