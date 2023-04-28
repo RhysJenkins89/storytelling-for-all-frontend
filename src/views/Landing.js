@@ -34,12 +34,15 @@ const Landing = () => {
                         <div className={styles.imageComponentContainer}> 
                             <ImageMain />
                         </div>
-                        <div className={styles.headingContainer}>
-                            <h1 className={styles.title}>{responseAll.title.data.attributes.title}</h1> 
-                            <h3 className={styles.subheading}>{responseAll.subheading.data.attributes.subheading}</h3>   
-                        </div>
-                        <div className={styles.textContainer}>
-                            <p className={styles.text}>{responseAll.intro.data.attributes.introduction}</p>    
+                        {/* Change this. I can't call it the container of words. */}
+                        <div className={styles.wordsContainer}>
+                            <div className={styles.headingContainer}>
+                                <h1 className={styles.title}>{responseAll.title.data.attributes.title}</h1> 
+                                <h2 className={styles.subheading}>{responseAll.subheading.data.attributes.subheading}</h2>   
+                            </div>
+                            <div className={styles.textContainer}>
+                                <p className={styles.text}>{responseAll.intro.data.attributes.introduction}</p>    
+                            </div>
                         </div>
                     </div>
                 </section>
