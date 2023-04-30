@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import landingImage from "../assets/woman-talking-unsplash.jpg";
-import ClipLoader from "react-spinners/ClipLoader";
+// import ClipLoader from "react-spinners/ClipLoader";
 import styles from "../styles/ImageMain.module.scss"
 
 const ImageMain = () => {
@@ -23,20 +23,19 @@ const ImageMain = () => {
 
     return (
         <>
-            {
-                loading ? 
-                    <ClipLoader
-                        loading={loading}
-                        size={100}
-                        aria-label="Loading spinner"
-                    />        
-                : 
-                <>
-                    <div className={styles.imageContainer}>
-                        <img className={styles.mainImage} src={landingImage} alt="Main landing image"/>
-                    </div>
-                </>
-            }
+            <div className={styles.imageContainer}>
+                {
+                    loading ? 
+                        // <ClipLoader
+                        //     loading={loading}
+                        //     size={100}
+                        //     aria-label="Loading spinner"
+                        // />
+                        <p>Content loading.</p>        
+                    :
+                    <img className={styles.mainImage} src={landingImage} alt="Main landing image"/>
+                }
+            </div>
         </>
     )
 }

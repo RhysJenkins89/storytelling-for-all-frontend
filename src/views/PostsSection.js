@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import styles from "../styles/PostsSection.module.scss"
+import image from "../assets/woman-talking-unsplash.jpg";
+import CardImage from "../components/CardImage";
 
 const PostsSection = () => {
     const [posts, setPosts] = useState(null)
@@ -8,7 +10,7 @@ const PostsSection = () => {
     
     useEffect(() => {
         const getPosts = async () => {
-            let response = await fetch("http://localhost:1337/api/posts")
+            let response = await fetch("http://localhost:1337/api/posts?populate=*")
             let postsData = await response.json()
             setPosts(postsData.data)
             setLoading(false)
@@ -25,14 +27,13 @@ const PostsSection = () => {
                 <p>Content is loading.</p>
                 :
                 posts.map((post) => {
-                    // console.log('post:', post.attributes.Date.split())
-                    // if (post.attributes.Date) {
-                    //     let dateFormatted = post.attributes.Date.split('').reverse().join()
-                    //     console.log({dateFormatted})
-                    // }
-                    // console.log(new Date(post.attributes.Date).toLocaleDateString())
+                    console.log('post:', post.attributes.Image.data.attributes)
                     return (
                         <div className={styles.cardContainer} key={post.id}>
+                            <div className={styles.cardImageContainer}>
+                                <CardImage className={styles.cardImage} image={`http://localhost:1337${post.attributes.Image.data.attributes.url}`} />
+                                {/* Add the correct url on the live site */}
+                            </div>
                             <div className={styles.textContainer}>
                                 <h2 className={styles.header}>{post.attributes.Title}</h2>
                                 {

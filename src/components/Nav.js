@@ -19,7 +19,7 @@ const Nav = () => {
         <nav className={styles.mainNav}>
             {/* Main logo */}
             <div className={styles.logoContainer}>
-                <h1>Storytelling for all</h1>
+                <h1>Navbar component</h1>
             </div>
 
             {/* Items container */}

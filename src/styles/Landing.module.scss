@@ -5,6 +5,7 @@
     padding-block: 5rem;
 
     // @media (max-width: variables.$extra-large-mobile) {
+    //     display: flex;
     //     flex-direction: column;
     //     padding-block: 0;
     // }
@@ -17,9 +18,9 @@
         position: relative;
         // background-color: aquamarine;
 
-        // @media (max-width: 500px) {
-        //     flex-direction: column;
-        // }
+        @media (max-width: 500px) {
+            flex-direction: column;
+        }
 
         .wordsContainer {
             margin-left: 5rem;

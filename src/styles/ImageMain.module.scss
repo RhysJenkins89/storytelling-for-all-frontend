@@ -3,6 +3,8 @@
     width: 20rem;
     border-radius: .75rem;
     overflow: hidden;
+    display: grid;
+    place-items: center;
 
     @media (max-width: 500px) {
         margin-inline: auto;

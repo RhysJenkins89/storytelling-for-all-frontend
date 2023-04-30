@@ -1,3 +1,5 @@
+@use "./variables/variables.scss";
+
 .postsSection {
     height: fit-content;
     background-color: lightslategrey;
@@ -8,6 +10,10 @@
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
         place-items: center;
+
+        @media (max-width: variables.$extra-large-mobile) {
+            grid-template-columns: 1fr;
+        }
     }
 
     .cardContainer {
@@ -18,11 +24,29 @@
         padding: 1rem;
         border-radius: .5rem;
 
+        .cardImageContainer {
+            height: 15rem;
+            width: 100%;
+            border-radius: .5rem;
+            overflow: hidden;
+            // display: grid;
+            // place-items: center;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        
+        .cardImage {
+            object-fit: cover;
+            height: auto;
+            width: 100%;
+        }
+
         .textContainer {
-            height: 100%;
             display: flex;
             flex-direction: column;
-
+            margin-top: 1rem;
+            height: calc(100% - 15rem - 1rem); // Note that this value is the height of the image and the padding of the card container.
+            
             .header {
                 margin: 0 0;
             }
@@ -34,6 +58,7 @@
     
             .link {
                 margin-top: auto;
+                color: black;
             }
         }
     }
