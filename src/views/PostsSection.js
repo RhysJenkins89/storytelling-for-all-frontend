@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import styles from "../styles/PostsSection.module.scss"
-import image from "../assets/woman-talking-unsplash.jpg";
 import CardImage from "../components/CardImage";
 
 const PostsSection = () => {
@@ -10,7 +9,7 @@ const PostsSection = () => {
     
     useEffect(() => {
         const getPosts = async () => {
-            let response = await fetch("http://localhost:1337/api/posts?populate=*")
+            let response = await fetch("http://localhost:1337/api/posts?populate=*") // Note that the populate option brings in the image url data.
             let postsData = await response.json()
             setPosts(postsData.data)
             setLoading(false)
@@ -27,12 +26,11 @@ const PostsSection = () => {
                 <p>Content is loading.</p>
                 :
                 posts.map((post) => {
-                    console.log('post:', post.attributes.Image.data.attributes)
                     return (
                         <div className={styles.cardContainer} key={post.id}>
                             <div className={styles.cardImageContainer}>
                                 <CardImage className={styles.cardImage} image={`http://localhost:1337${post.attributes.Image.data.attributes.url}`} />
-                                {/* Add the correct url on the live site */}
+                                {/* Add the correct url on the live site. Note as well that the image src needs to find the image on Strapi. */}
                             </div>
                             <div className={styles.textContainer}>
                                 <h2 className={styles.header}>{post.attributes.Title}</h2>
@@ -43,7 +41,6 @@ const PostsSection = () => {
                                     null
                                 }
                                 <p>{post.attributes.Subheading}</p>
-                                {/* <h2>{post.attributes.Body}</h2> */}
                                 <Link className={styles.link} to={`/posts/${post.id}`}>View details</Link>
                             </div>
                         </div>
@@ -56,7 +53,3 @@ const PostsSection = () => {
 }
 
 export default PostsSection
-
-// *** To do ***
-// Add a section header
-// Make a simple card design 
