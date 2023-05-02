@@ -11,6 +11,7 @@ import {
 import './index.css';
 
 const router = createBrowserRouter([
+	// This isn't correct. We serve the App component on one route and another component on another route. Take a look at this tomorrow.
 	{
 		path: "/",
 		element: <App />,

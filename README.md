@@ -10,3 +10,4 @@ I'm rebuilding the Storytelling For All site with React on the frontend and Stra
 * Add text onto the main image
 * Build the books page
 * Add the nav and footer to all pages
+* Sort Router structure

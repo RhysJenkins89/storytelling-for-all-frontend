@@ -17,6 +17,4 @@ const CardImage = ({image}) => {
     )
 };
 
-// Test commit
-
 export default CardImage;

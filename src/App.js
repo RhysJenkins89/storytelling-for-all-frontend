@@ -11,7 +11,7 @@ function App() {
 			<Nav />
 			<Landing />
 			<PostsSection />
-			{/* <Footer /> */}
+			<Footer />
 		</div>
 	);
 }

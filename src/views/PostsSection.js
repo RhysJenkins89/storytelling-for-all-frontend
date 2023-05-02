@@ -23,7 +23,7 @@ const PostsSection = () => {
             <div className={styles.mainContainer}>
             {
                 loading ? 
-                <p>Content is loading.</p>
+                    <p>Content is loading.</p>
                 :
                 posts.map((post) => {
                     return (
