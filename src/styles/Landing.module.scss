@@ -18,14 +18,14 @@
         position: relative;
         // background-color: aquamarine;
 
-        @media (max-width: 500px) {
+        @media (max-width: variables.$extra-large-mobile) {
             flex-direction: column;
         }
 
         .wordsContainer {
             margin-left: 5rem;
 
-            @media (max-width: 500px) {
+            @media (max-width: variables.$extra-large-mobile) {
                 margin: 2.5rem auto 0 auto;
                 width: 90vw;
             }
