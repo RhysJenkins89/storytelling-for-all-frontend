@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import styles from "../styles/Nav.module.css"
+import styles from "../styles/Nav.module.scss"
 
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -19,7 +19,7 @@ const Nav = () => {
         <nav className={styles.mainNav}>
             {/* Main logo */}
             <div className={styles.logoContainer}>
-                <h1>Navbar component</h1>
+                <h1>Navbar</h1>
             </div>
 
             {/* Items container */}
